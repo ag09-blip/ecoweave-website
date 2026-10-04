@@ -3,7 +3,7 @@ export default function Duo() {
     <section className="pad" id="duo" style={{ background: 'var(--sand)' }}>
       <div className="stag green">The Co-Founders</div>
       <h2>Two siblings.<br />One <em>conviction.</em></h2>
-      <p className="sec-lead" style={{ marginTop: '.75rem', marginBottom: '3.5rem' }}>EcoWeave was co-founded by Aarav and Navya Gupta — a brother and sister from Jaipur who share the belief that sustainable design must serve two masters equally: the planet, and the artisan who makes the product possible. Aarav leads the venture as Managing Head, running the CiCLO®/Jiwarajka partnership and the commercial side of things. Navya leads as Art Head, making sure every product is nice enough to actually want and honest enough to mean something.</p>
+      <p className="sec-lead" style={{ marginTop: '.75rem', marginBottom: '3.5rem' }}>EcoWeave was co-founded by Aarav and Navya Gupta — a brother and sister from Jaipur who share the belief that sustainable design must serve two masters equally: the planet, and the artisan who makes the product possible. Aarav leads the venture as Managing Head, looking after the CiCLO® yarn supply and the commercial side of things. Navya leads as Art Head, making sure every product is nice enough to actually want and honest enough to mean something.</p>
 
       {/* CO-FOUNDER CARDS — equal weight, side by side */}
       <div className="duo-grid" style={{ display: 'grid', gap: '1px', background: 'var(--rule)' }}>
@@ -30,11 +30,11 @@ export default function Duo() {
             <blockquote style={{ fontSize: '1.02rem', borderLeftColor: 'var(--sage)' }}>"EcoWeave was born from a simple conviction — that sustainable textiles must be economically superior for the producer, or they will never scale."</blockquote>
             <div>
               <div style={{ fontSize: '.56rem', fontWeight: '500', letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--sage)', marginBottom: '.38rem' }}>Leading the Mission</div>
-              <p style={{ fontSize: '.84rem', color: 'var(--ink-mid)', lineHeight: '1.82', fontWeight: '300' }}>Aarav leads EcoWeave as Managing Head. He identified the microplastic crisis in synthetic home textiles, discovered CiCLO® technology, and built the artisan platform model from scratch — including getting Jiwarajka to make certified yarn available in small enough quantities for individual weavers to actually use.</p>
+              <p style={{ fontSize: '.84rem', color: 'var(--ink-mid)', lineHeight: '1.82', fontWeight: '300' }}>Aarav leads EcoWeave as Managing Head. He identified the microplastic crisis in synthetic home textiles, discovered CiCLO® technology, and built the artisan platform model from scratch — including setting up the CiCLO® yarn supply (from Jiwarajka's CSR) that we redistribute to weavers.</p>
             </div>
             <div>
               <div style={{ fontSize: '.56rem', fontWeight: '500', letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--sage)', marginBottom: '.38rem' }}>The Commercial Case</div>
-              <p style={{ fontSize: '.84rem', color: 'var(--ink-mid)', lineHeight: '1.82', fontWeight: '300' }}>Aarav's core insight: sustainability only sticks if the economics work for every person in the supply chain. EcoWeave proves this — CiCLO® certified weavers earn ₹114/metre instead of ₹88/metre for commodity polyester. The certification doesn't cost the weaver anything. It pays them.</p>
+              <p style={{ fontSize: '.84rem', color: 'var(--ink-mid)', lineHeight: '1.82', fontWeight: '300' }}>Aarav's core insight: sustainability only sticks if the economics work for every person in the supply chain. EcoWeave proves this — CiCLO® certified weavers can earn more than they would on commodity polyester. The certification doesn't cost the weaver anything. It pays them.</p>
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.38rem', paddingTop: '1.25rem', borderTop: '1px solid var(--rule)', marginTop: 'auto' }}>
               <span style={{ background: 'var(--sand)', border: '1px solid var(--rule)', color: 'var(--ink-mid)', fontSize: '.59rem', fontWeight: '300', padding: '.2rem .55rem' }}>Mission &amp; Strategy</span>
@@ -92,18 +92,29 @@ export default function Duo() {
         </div>
         <div style={{ display: 'flex', gap: '2.5rem', flexShrink: '0' }}>
           <div style={{ textAlign: 'center' }}>
-            <div style={{ fontFamily: 'var(--h)', fontSize: '1.8rem', fontWeight: '300', color: '#fff', lineHeight: '1' }}>29%</div>
-            <div style={{ fontSize: '.6rem', color: 'rgba(255,255,255,.55)', marginTop: '2px', fontWeight: '300' }}>Income uplift for artisans</div>
+            <div style={{ fontFamily: 'var(--h)', fontSize: '1.8rem', fontWeight: '300', color: '#fff', lineHeight: '1' }}>Fair</div>
+            <div style={{ fontSize: '.6rem', color: 'rgba(255,255,255,.55)', marginTop: '2px', fontWeight: '300' }}>Pay that works for artisans</div>
           </div>
           <div style={{ textAlign: 'center' }}>
-            <div style={{ fontFamily: 'var(--h)', fontSize: '1.8rem', fontWeight: '300', color: '#fff', lineHeight: '1' }}>2</div>
-            <div style={{ fontSize: '.6rem', color: 'rgba(255,255,255,.55)', marginTop: '2px', fontWeight: '300' }}>Active artisan clusters</div>
+            <div style={{ fontFamily: 'var(--h)', fontSize: '1.8rem', fontWeight: '300', color: '#fff', lineHeight: '1' }}>Handmade</div>
+            <div style={{ fontSize: '.6rem', color: 'rgba(255,255,255,.55)', marginTop: '2px', fontWeight: '300' }}>Rugs woven by artisans</div>
           </div>
           <div style={{ textAlign: 'center' }}>
-            <div style={{ fontFamily: 'var(--h)', fontSize: '1.8rem', fontWeight: '300', color: '#fff', lineHeight: '1' }}>India's<br /><span style={{ fontSize: '1.2rem' }}>First</span></div>
-            <div style={{ fontSize: '.6rem', color: 'rgba(255,255,255,.55)', marginTop: '2px', fontWeight: '300' }}>CiCLO® home textile brand</div>
+            <div style={{ fontFamily: 'var(--h)', fontSize: '1.8rem', fontWeight: '300', color: '#fff', lineHeight: '1' }}>CiCLO®</div>
+            <div style={{ fontSize: '.6rem', color: 'rgba(255,255,255,.55)', marginTop: '2px', fontWeight: '300' }}>Biodegradable technology</div>
           </div>
         </div>
+      </div>
+
+      {/* Our story — pehle alag Founder section tha jo Aarav ko dobara dikhata tha;
+          ab uski unique story yahin hai, taaki ek hi jagah ho. */}
+      <div style={{ marginTop: '4rem', maxWidth: '760px' }}>
+        <div className="stag green">How it started</div>
+        <h2 style={{ fontSize: 'clamp(1.6rem,3vw,2.4rem)' }}>Born in Jaipur.<br />Built for the <em>weavers.</em></h2>
+        <p style={{ fontSize: '.72rem', color: 'var(--ink-light)', margin: '-.4rem 0 1.5rem', fontWeight: '300' }}>Aarav Gupta · Class of 2026, Jayshree Periwal International School, Jaipur</p>
+        <div className="fbio-section"><div className="fbio-label">The Origin</div><p className="fbio">Growing up in Jaipur — a city built around centuries-old textile traditions — I watched local artisans abandon sustainable heritage fabrics for cheap synthetics just to make ends meet. Around the same time, I came across research on the microplastic crisis these synthetics were causing worldwide, and it stuck with me.</p></div>
+        <div className="fbio-section"><div className="fbio-label">The Discovery</div><p className="fbio">I discovered CiCLO® technology — a patented biodegradable fibre additive already used by brands like Target, Walmart, Best Western Hotels and Billabong — and wanted to use it for Indian handmade rugs. EcoWeave™ was our answer: bring CiCLO® to Indian weavers, prove it can work commercially, then open it up to any weaver who wants a better rate and a product worth talking about.</p></div>
+        <div className="fbio-section"><div className="fbio-label">Why Not an NGO</div><p className="fbio">A charity model creates dependency, not something that lasts on its own. So EcoWeave™ is built around two simple ideas: getting CiCLO® technology into artisan supply chains, and building a way to sell the resulting products directly to buyers who care about where their textiles come from. The technology makes the economics work. The economics are what make the sustainability stick.</p></div>
       </div>
 
     </section>

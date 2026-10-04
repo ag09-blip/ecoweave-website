@@ -46,6 +46,15 @@ export default function PrivacyPage() {
         EcoWeave™.
       </p>
 
+      <h2>Price requests</h2>
+      <p>
+        If you use the &ldquo;Request price&rdquo; form, we collect the name,
+        email, phone, city and message you type in, plus the rugs you picked.
+        It is sent to us by email so we can reply with a quote. We use an
+        email service (Resend) to deliver it, and we only use it to answer
+        your request.
+      </p>
+
       <h2>Cart &amp; wishlist</h2>
       <p>
         Items you add to your cart or wishlist are stored in your own

@@ -17,7 +17,7 @@ export default function Solution() {
           <p>CiCLO® is a patented additive fused into polyester during melt extrusion — it creates biodegradable spots in the plastic matrix where naturally-occurring microbes can break the fibre down, just like wool or cotton.</p>
           <p>The result: synthetic textiles with all the durability and performance you expect, that biodegrade responsibly when they reach the environment.</p>
           <div className="sol-steps">
-            <div className="sstep"><div className="sstep-n">1</div><div className="sstep-t"><h4>Embedded at fibre source — never washes off</h4><p>CiCLO® is fused into polyester pellets during melt extrusion at Jiwarajka's facility. It becomes part of the molecular structure.</p></div></div>
+            <div className="sstep"><div className="sstep-n">1</div><div className="sstep-t"><h4>Embedded at fibre source — never washes off</h4><p>CiCLO® is fused into polyester pellets during melt extrusion at the yarn maker's facility. It becomes part of the molecular structure.</p></div></div>
             <div className="sstep"><div className="sstep-n">2</div><div className="sstep-t"><h4>Full performance in your home</h4><p>Identical durability, colour, and handle to conventional polyester. CiCLO® only activates when fibres reach an active microbial environment.</p></div></div>
             <div className="sstep"><div className="sstep-n">3</div><div className="sstep-t"><h4>Biodegrades in soil, sludge, seawater &amp; landfill</h4><p>Third-party ASTM tests confirm 94% biodegradation in seawater and 91% in soil. Only biogas and biomass remain — no toxic residue.</p></div></div>
           </div>

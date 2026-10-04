@@ -11,8 +11,7 @@ const LINKS = [
   ['#platform', 'Artisans'],
   ['#impact', 'Impact'],
   ['#duo', 'The Duo'],
-  ['#founder', 'Founder'],
-  ['#jiwarajka', 'Jiwarajka'],
+  ['#jiwarajka', 'Yarn Source'],
 ] as const
 
 export default function SiteNav({ isLoggedIn }: { isLoggedIn: boolean }) {

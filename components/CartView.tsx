@@ -1,6 +1,8 @@
 'use client'
 
 import Link from 'next/link'
+import { useState } from 'react'
+import PriceRequestModal from '@/components/PriceRequestModal'
 import SafeImg from '@/components/SafeImg'
 import { useCart } from '@/lib/cart-context'
 import { formatPrice } from '@/lib/products'
@@ -20,6 +22,8 @@ export default function CartView() {
     (sum, i) => sum + i.priceInPaise * i.qty,
     0
   )
+  const hasUnpriced = items.some((i) => i.priceInPaise <= 0)
+  const [requesting, setRequesting] = useState(false)
 
   return (
     <main className="cart-page" style={{ paddingTop: 'calc(65px + 3.5rem)' }}>
@@ -75,7 +79,9 @@ export default function CartView() {
                     </button>
                   </div>
                   <div className="cart-price">
-                    {formatPrice(item.priceInPaise * item.qty)}
+                    {item.priceInPaise > 0
+                      ? formatPrice(item.priceInPaise * item.qty)
+                      : formatPrice(0)}
                   </div>
                 </div>
               ))}
@@ -85,7 +91,23 @@ export default function CartView() {
           {items.length > 0 && (
             <div className="cart-summary">
               <span>Subtotal</span>
-              <strong>{formatPrice(subtotalPaise)}</strong>
+              <strong>
+                {hasUnpriced && subtotalPaise === 0
+                  ? 'Price on request'
+                  : formatPrice(subtotalPaise)}
+              </strong>
+              {hasUnpriced && subtotalPaise > 0 && (
+                <span>+ items with price on request</span>
+              )}
+              {hasUnpriced && (
+                <button
+                  type="button"
+                  className="btn btn-primary btn-auto"
+                  onClick={() => setRequesting(true)}
+                >
+                  Request prices for my cart
+                </button>
+              )}
             </div>
           )}
         </section>
@@ -123,6 +145,12 @@ export default function CartView() {
           )}
         </section>
       </div>
+      {requesting && (
+        <PriceRequestModal
+          items={items.map((i) => ({ name: i.name, qty: i.qty }))}
+          onClose={() => setRequesting(false)}
+        />
+      )}
     </main>
   )
 }

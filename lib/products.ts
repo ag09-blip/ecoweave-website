@@ -1,14 +1,12 @@
 /**
- * Products — abhi ke liye yahin hardcoded hain, bilkul purani site ki tarah.
+ * Products — abhi ke liye yahin hardcoded hain.
  *
- * Phase 3 mein ye Supabase `products` table se aayenge aur admin panel se
- * add/edit honge. Isliye abhi se `id` aur `priceInPaise` rakh diye hain:
- *
- *   - `id`   : cart aur orders ko product se jodne ke liye zaroori hai
- *   - paise  : paisa hamesha integer mein store karo. "₹3,999" string se
- *              total jodna, tax lagana, ya refund karna possible nahi hai.
+ * Sirf rugs bechne ke liye hain (shower curtains / table linen hata diye gaye).
+ * Prices abhi decide nahi hui — `priceInPaise: 0` ka matlab "Price on request"
+ * hai. Asli price pata chalne par yahan paise mein daalo (399900 -> "₹3,999").
+ * Paisa hamesha integer mein rakho, string mein nahi.
  */
-export type Category = 'rugs' | 'shower' | 'table'
+export type Category = 'rugs'
 
 export type Product = {
   id: string
@@ -21,156 +19,46 @@ export type Product = {
 }
 
 export const CATEGORY_LABELS: Record<Category, string> = {
-  rugs: 'Handmade Handloom Rugs',
-  shower: 'Shower Curtains',
-  table: 'Table Linen',
+  rugs: 'Handmade Rugs',
 }
 
-/** 399900 -> "₹3,999" */
+/** 399900 -> "₹3,999"; 0 -> "Price on request" */
 export function formatPrice(paise: number): string {
+  if (paise <= 0) return 'Price on request'
   return '₹' + (paise / 100).toLocaleString('en-IN')
 }
 
+const rug = (
+  id: string,
+  name: string,
+  desc: string,
+  file: string
+): Product => ({
+  id: `rug-${id}`,
+  name,
+  desc,
+  priceInPaise: 0,
+  unit: 'Rug',
+  img: `/images/rug-${file}.jpeg`,
+  icon: '🏠',
+})
+
 export const PRODUCTS: Record<Category, Product[]> = {
   rugs: [
-    {
-      id: 'rug-darri-geometric',
-      name: 'Darri Geometric — Handloom',
-      desc: 'Hand-woven cotton darri in geometric pattern. Pit-loom woven by artisans in Panipat.',
-      priceInPaise: 399900,
-      unit: '4×6 ft',
-      img: '/images/product-rug-darri-geometric.jpg',
-      icon: '🏠',
-    },
-    {
-      id: 'rug-durrie-natural-stripe',
-      name: 'Durrie Natural Stripe',
-      desc: 'Flat-weave durrie in natural undyed cotton. Woven by artisans in the Panipat cluster.',
-      priceInPaise: 279900,
-      unit: '3×5 ft',
-      img: '/images/product-rug-durrie-natural.jpg',
-      icon: '🏠',
-    },
-    {
-      id: 'rug-block-print-indigo',
-      name: 'Block Print Handloom — Indigo',
-      desc: 'Handloom base with Sanganer indigo block print border. Woven in Panipat, block-printed in Sanganer.',
-      priceInPaise: 449900,
-      unit: '4×6 ft',
-      img: '/images/product-rug-indigo.jpg',
-      icon: '🏠',
-    },
-    {
-      id: 'rug-carpet-terracotta',
-      name: 'Carpet Weave — Terracotta',
-      desc: 'Hand-knotted carpet weave in warm terracotta tones. Knotted by carpet weavers in Panipat.',
-      priceInPaise: 599900,
-      unit: '4×6 ft',
-      img: '/images/product-rug-terracotta.jpg',
-      icon: '🏠',
-    },
-    {
-      id: 'rug-handloom-sage',
-      name: 'Handloom Solid — Sage',
-      desc: 'Dense handloom flat-weave in muted sage. Woven in Rajiv Colony, Panipat.',
-      priceInPaise: 329900,
-      unit: '3×5 ft',
-      img: '/images/product-rug-sage.jpg',
-      icon: '🏠',
-    },
-  ],
-  shower: [
-    {
-      id: 'shower-botanical-block',
-      name: 'Botanical Block Print',
-      desc: 'Sanganer block-print botanical motifs on CiCLO® base. Block-printed in Sanganer, Jaipur.',
-      priceInPaise: 229900,
-      unit: 'Single',
-      img: '/images/product-shower-botanical.jpg',
-      icon: '🚿',
-    },
-    {
-      id: 'shower-indigo-stripe',
-      name: 'Indigo Stripe — Handloom',
-      desc: 'Crisp woven indigo & white stripes. Quick-dry CiCLO® polyester. Panipat woven.',
-      priceInPaise: 189900,
-      unit: 'Single',
-      img: '/images/product-shower-indigo-stripe.jpg',
-      icon: '🚿',
-    },
-    {
-      id: 'shower-natural-waffle',
-      name: 'Natural Waffle Weave',
-      desc: 'Classic waffle texture in natural ivory. Water-resistant CiCLO® polyester weave.',
-      priceInPaise: 169900,
-      unit: 'Single',
-      img: '/images/product-shower-waffle.jpg',
-      icon: '🚿',
-    },
-    {
-      id: 'shower-jaipur-floral',
-      name: 'Jaipur Floral Print',
-      desc: 'Traditional Jaipur floral block-print in fuchsia & sage. Block-printed in Sanganer.',
-      priceInPaise: 269900,
-      unit: 'Single',
-      img: '/images/product-shower-jaipur-floral.jpg',
-      icon: '🚿',
-    },
-    {
-      id: 'shower-geometric-mosaic',
-      name: 'Geometric Mosaic',
-      desc: 'Bold geometric tile-print in earthy terracotta tones. CiCLO® certified throughout.',
-      priceInPaise: 209900,
-      unit: 'Single',
-      img: '/images/product-shower-geometric.jpg',
-      icon: '🚿',
-    },
-  ],
-  table: [
-    {
-      id: 'table-ivory-runner',
-      name: 'Ivory Table Runner — Handloom',
-      desc: 'Clean ivory runner with subtle woven border. 14×72 inches. Woven in Panipat.',
-      priceInPaise: 89900,
-      unit: 'Single',
-      img: '/images/product-table-ivory-runner.jpg',
-      icon: '🍽️',
-    },
-    {
-      id: 'table-jaipur-tablecloth',
-      name: 'Jaipur Block Print Tablecloth',
-      desc: 'Hand block-printed in traditional Jaipur motifs. 60×90 inches.',
-      priceInPaise: 219900,
-      unit: 'Single',
-      img: '/images/product-table-jaipur-print.jpg',
-      icon: '🍽️',
-    },
-    {
-      id: 'table-terracotta-placemats',
-      name: 'Terracotta Placemats — Set 4',
-      desc: 'Warm terracotta with Sanganer block-print border. 13×18 inches each.',
-      priceInPaise: 109900,
-      unit: 'Set/4',
-      img: '/images/product-table-terracotta-mats.jpg',
-      icon: '🍽️',
-    },
-    {
-      id: 'table-sage-napkins',
-      name: 'Sage Green Napkins — Set 6',
-      desc: 'Warm sage dinner napkins with hemstitched edges. Woven in Panipat.',
-      priceInPaise: 119900,
-      unit: 'Set/6',
-      img: '/images/product-table-sage-napkins.jpg',
-      icon: '🍽️',
-    },
-    {
-      id: 'table-natural-placemats',
-      name: 'Natural Woven Placemats — Set 6',
-      desc: 'Textured natural weave placemats. 13×18 inches each. CiCLO® certified polyester.',
-      priceInPaise: 149900,
-      unit: 'Set/6',
-      img: '/images/product-table-natural-mats.jpg',
-      icon: '🍽️',
-    },
+    rug('leheriya', 'Leheriya', 'Wavy leheriya stripes in sage and sand. Panja dhurrie, flat weave.', 'leheriya'),
+    rug('stepwells', 'Stepwells', 'Stepped, stepwell-inspired blocks in earthy browns. Kilim style, flat weave.', 'stepwells'),
+    rug('aravalli-contours', 'Aravalli Contours', 'Flowing contour lines, like the Aravalli hills seen from above. Panja dhurrie, flat weave.', 'aravalli-contours'),
+    rug('woven-arrows', 'Woven Arrows', 'Rows of woven arrow motifs on a natural ground. Panja dhurrie, flat weave.', 'woven-arrows'),
+    rug('block-print-geometry', 'Block Print Geometry', 'Block-print flower motifs with a patterned border. Flat weave, cotton.', 'block-print-geometry'),
+    rug('blue-pottery-geometry', 'Blue Pottery Geometry', 'Octagon and flower pattern inspired by Jaipur blue pottery. Hand tufted, wool.', 'blue-pottery-geometry'),
+    rug('desert-dunes', 'Desert Dunes', 'Layered dune curves in warm desert tones. Hand knotted, wool and bamboo silk.', 'desert-dunes'),
+    rug('hawa-mahal-blue-pottery', 'Hawa Mahal × Blue Pottery', 'Hawa Mahal jharokha arches mixed with blue pottery flowers.', 'hawa-mahal-blue-pottery'),
+    rug('block-print-blue-pottery', 'Block Print × Blue Pottery', 'Block-print borders with a blue pottery octagon field.', 'block-print-blue-pottery'),
+    rug('city-grid-bloom', 'City Grid Bloom', 'A Jaipur city-grid layout with flower motifs in navy on cream.', 'city-grid-bloom'),
+    rug('forest-dune-flow', 'Forest Dune Flow', 'Soft flowing bands of forest green, sand and olive.', 'forest-dune-flow'),
+    rug('mustard-jacquard', 'Mustard Jacquard', 'Mustard ground with a fine floral jacquard pattern and border.', 'mustard-jacquard'),
+    rug('ivory-textured-weave', 'Ivory Textured Weave', 'Ivory rug with raised arches and lines for texture.', 'ivory-textured-weave'),
+    rug('terracotta-terrain', 'Terracotta Terrain', 'Terracotta and cream blocks with a map-like line texture.', 'terracotta-terrain'),
+    rug('navy-stripe-blackout', 'Navy Stripe — Blackout', 'Fine navy stripes with a solid dark panel on one side.', 'navy-stripe-blackout'),
   ],
 }

@@ -13,7 +13,6 @@ import Jiwarajka from '@/components/marketing/Jiwarajka'
 import Platform from '@/components/marketing/Platform'
 import Impact from '@/components/marketing/Impact'
 import Duo from '@/components/marketing/Duo'
-import Founder from '@/components/marketing/Founder'
 import CallToAction from '@/components/marketing/CallToAction'
 
 export default async function Home() {
@@ -37,7 +36,6 @@ export default async function Home() {
       <Platform />
       <Impact />
       <Duo />
-      <Founder />
       <CallToAction />
       <SiteFooter isLoggedIn={isLoggedIn} />
     </>

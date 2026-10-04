@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import SafeImg from '@/components/SafeImg'
 import { useCart } from '@/lib/cart-context'
+import PriceRequestModal, { type RequestItem } from '@/components/PriceRequestModal'
 import {
   PRODUCTS,
   CATEGORY_LABELS,
@@ -17,6 +18,8 @@ export default function Products() {
   const [active, setActive] = useState<Category>('rugs')
   const [toast, setToast] = useState<string | null>(null)
   const { addToCart, isWishlisted, toggleWishlist } = useCart()
+
+  const [requestItems, setRequestItems] = useState<RequestItem[] | null>(null)
 
   const handleAddToCart = (p: Product) => {
     addToCart(p)
@@ -52,18 +55,27 @@ export default function Products() {
         it.
       </p>
 
-      <div className="cat-tabs">
-        {CATEGORIES.map((cat) => (
-          <button
-            key={cat}
-            type="button"
-            className={`ctab${active === cat ? ' active' : ''}`}
-            onClick={() => setActive(cat)}
-          >
-            {CATEGORY_LABELS[cat]}
-          </button>
-        ))}
-      </div>
+      <p className="rq-note">
+        <strong>How prices work:</strong> we haven&apos;t listed prices yet.
+        Press &ldquo;Request price&rdquo; on any rug, enter your name and
+        email, and we&apos;ll send you a quote. It&apos;s a request, not a
+        checkout — you don&apos;t pay anything on this site.
+      </p>
+
+      {CATEGORIES.length > 1 && (
+        <div className="cat-tabs">
+          {CATEGORIES.map((cat) => (
+            <button
+              key={cat}
+              type="button"
+              className={`ctab${active === cat ? ' active' : ''}`}
+              onClick={() => setActive(cat)}
+            >
+              {CATEGORY_LABELS[cat]}
+            </button>
+          ))}
+        </div>
+      )}
 
       {CATEGORIES.map((cat) => (
         <div key={cat} className={`pcat${active === cat ? ' vis' : ''}`}>
@@ -83,7 +95,7 @@ export default function Products() {
                       inset: 0,
                     }}
                   />
-                  <div className="pph" style={{ display: 'flex' }}>
+                  <div className="pph" style={{ display: 'none' }}>
                     <span className="pph-icon">{p.icon}</span>
                   </div>
                   <span className="eco-badge">CiCLO®</span>
@@ -115,12 +127,28 @@ export default function Products() {
                       Add to Cart
                     </button>
                   </div>
+                  {p.priceInPaise <= 0 && (
+                    <button
+                      type="button"
+                      className="preq"
+                      onClick={() => setRequestItems([{ name: p.name, qty: 1 }])}
+                    >
+                      Request price
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
           </div>
         </div>
       ))}
+
+      {requestItems && (
+        <PriceRequestModal
+          items={requestItems}
+          onClose={() => setRequestItems(null)}
+        />
+      )}
 
       {toast && (
         <div className="cart-toast" role="status">

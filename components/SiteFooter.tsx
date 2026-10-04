@@ -9,7 +9,7 @@ export default function SiteFooter({ isLoggedIn }: { isLoggedIn: boolean }) {
             Eco<em>Weave</em>™
           </Link>
           <p className="fdesc">
-            India&apos;s first CiCLO® powered home textile brand.
+            Handmade rugs made with CiCLO® biodegradable technology.
             <br />
             Student-founded. Artisan-made. Planet-first.
             <br />
@@ -23,19 +23,8 @@ export default function SiteFooter({ isLoggedIn }: { isLoggedIn: boolean }) {
         <div>
           <h4>Products</h4>
           <ul>
-            {/*
-              Pehle ye links showCat('curtains') call karte the — par us naam ki
-              koi category hai hi nahi, to click karne pe poora shop gayab ho
-              jaata tha. Ab seedha #products pe le jaate hain.
-            */}
             <li>
-              <a href="#products">Handloom Rugs</a>
-            </li>
-            <li>
-              <a href="#products">Shower Curtains</a>
-            </li>
-            <li>
-              <a href="#products">Table Linen</a>
+              <a href="#products">Handmade Rugs</a>
             </li>
           </ul>
         </div>
@@ -44,10 +33,7 @@ export default function SiteFooter({ isLoggedIn }: { isLoggedIn: boolean }) {
           <h4>Platform</h4>
           <ul>
             <li>
-              <a href="#platform">Panipat Cluster</a>
-            </li>
-            <li>
-              <a href="#platform">Jaipur Cluster</a>
+              <a href="#platform">Our Artisans</a>
             </li>
             <li>
               <a href="#impact">Impact</a>
@@ -70,7 +56,7 @@ export default function SiteFooter({ isLoggedIn }: { isLoggedIn: boolean }) {
           <h4>Company</h4>
           <ul>
             <li>
-              <a href="#founder">About Aarav</a>
+              <a href="#duo">About Us</a>
             </li>
             <li>
               <a href="mailto:aarav@ecoweave.in">Contact</a>

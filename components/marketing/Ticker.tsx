@@ -3,14 +3,14 @@ export default function Ticker() {
     <div className="ticker">
       <div className="tki">
         <span className="ti">CiCLO® — <strong>94%</strong> biodegradation in seawater · ASTM D6691 proven</span><span className="tsep">·</span>
-        <span className="ti">Jiwarajka India — certified CiCLO® DTY yarn · <strong>105,000T</strong> annual capacity</span><span className="tsep">·</span>
+        <span className="ti">CiCLO® yarn supplied by <strong>Jiwarajka</strong> through its CSR · redistributed to artisans by EcoWeave</span><span className="tsep">·</span>
         <span className="ti">CiCLO® technology — used globally by <strong>Target · Walmart · Best Western Hotels · Billabong</strong></span><span className="tsep">·</span>
-        <span className="ti"><strong>India's first</strong> CiCLO® home textile brand</span><span className="tsep">·</span>
+        <span className="ti"><strong>Handmade rugs</strong> made with CiCLO® technology</span><span className="tsep">·</span>
         <span className="ti">Founded by <strong>Aarav Gupta</strong> — high school entrepreneur from Jaipur, Rajasthan</span><span className="tsep">·</span>
         <span className="ti">CiCLO® — <strong>94%</strong> biodegradation in seawater · ASTM D6691 proven</span><span className="tsep">·</span>
-        <span className="ti">Jiwarajka India — certified CiCLO® DTY yarn · <strong>105,000T</strong> annual capacity</span><span className="tsep">·</span>
+        <span className="ti">CiCLO® yarn supplied by <strong>Jiwarajka</strong> through its CSR · redistributed to artisans by EcoWeave</span><span className="tsep">·</span>
         <span className="ti">CiCLO® technology — used globally by <strong>Target · Walmart · Best Western Hotels · Billabong</strong></span><span className="tsep">·</span>
-        <span className="ti"><strong>India's first</strong> CiCLO® home textile brand</span><span className="tsep">·</span>
+        <span className="ti"><strong>Handmade rugs</strong> made with CiCLO® technology</span><span className="tsep">·</span>
         <span className="ti">Founded by <strong>Aarav Gupta</strong> — high school entrepreneur from Jaipur, Rajasthan</span><span className="tsep">·</span>
       </div>
     </div>

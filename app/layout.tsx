@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "India's first CiCLO® home textile brand. Biodegradable curtains, table linen & shower textiles by artisan weavers in Panipat & Jaipur.",
+    "Handmade biodegradable rugs made with CiCLO® technology, by artisan weavers in Panipat & Jaipur.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

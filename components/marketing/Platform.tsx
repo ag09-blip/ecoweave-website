@@ -11,19 +11,15 @@ export default function Platform() {
                 />
           <div className="platform-img-bg" style={{ display: 'none' }}>🧵</div>
           <div className="platform-img-overlay"></div>
-          <div className="platform-stats">
-            <div className="pstat"><span className="pstat-n">500+</span><span className="pstat-l">Goal: artisan families</span></div>
-            <div className="pstat"><span className="pstat-n">2</span><span className="pstat-l">Currently: active clusters</span></div>
-            <div className="pstat"><span className="pstat-n">29%</span><span className="pstat-l">Income uplift documented</span></div>
-          </div>
+
         </div>
         <div className="platform-text">
           <div className="stag green">The Artisan Platform</div>
           <h2>Craft meets<br /><em>science.</em><br />Poverty meets<br />opportunity.</h2>
-          <p>EcoWeave™ is more than a product line — it's an economic model. By sourcing CiCLO® certified DTY yarn from Jiwarajka India and channelling orders through weavers directly, we give artisans access to a premium market that simply didn't exist before.</p>
-          <p>A weaver earning ₹88/metre on commodity polyester earns ₹114/metre on CiCLO® certified EcoWeave™ fabric. That's a 29% uplift — and it's the whole point of this project.</p>
+          <p>EcoWeave™ is more than a product line — it's an economic model. We take the CiCLO® yarn that Jiwarajka supplies through its CSR work and redistribute it to weavers directly, so artisans can make rugs for a market that cares about biodegradable materials.</p>
+          <p>Our goal is for weavers using CiCLO® certified yarn to earn more than they would on commodity polyester — that's the whole point of this project.</p>
           <div className="cluster-grid">
-            <div className="cluster"><h4>📍 Panipat, Haryana</h4><p>India's home textile capital. 8-loom to 100-loom operators transitioning to CiCLO® certified production.</p></div>
+            <div className="cluster"><h4>📍 Panipat, Haryana</h4><p>India's home textile capital. Weavers and workshops moving toward CiCLO® certified production.</p></div>
             <div className="cluster"><h4>📍 Jaipur, Rajasthan</h4><p>Block print and weaving artisans. Ancient craft techniques on next-generation biodegradable substrate.</p></div>
           </div>
         </div>

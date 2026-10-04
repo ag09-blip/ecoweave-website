@@ -10,9 +10,9 @@ export default function Hero() {
       </div>
       <div className="hero-content">
         <div className="hero-left">
-          <div className="hbadge"><div className="hbd"></div><span className="hbt">India's First CiCLO® Home Textile Brand</span></div>
+          <div className="hbadge"><div className="hbd"></div><span className="hbt">Handmade Rugs · CiCLO® Technology</span></div>
           <h1>Textiles that<br /><em>give back</em><br />to the <span className="t">earth.</span></h1>
-          <p className="hero-lead">Biodegradable curtains, table linen &amp; shower textiles — woven by artisan craftspeople in Panipat &amp; Jaipur using patented <strong>CiCLO® biodegradable technology.</strong></p>
+          <p className="hero-lead">Biodegradable handmade rugs — woven by artisan craftspeople in Panipat &amp; Jaipur using patented <strong>CiCLO® biodegradable technology.</strong></p>
           <div className="hero-btns">
             <a href="#products" className="btn-p">Shop the Collection</a>
             <a href="#solution" className="btn-o">Our Technology</a>
